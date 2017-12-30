@@ -9,8 +9,10 @@ held in conjunction with the European Conference on Machine Learning and
 Principles and Practice of Knowledge Discovery in Databases (ECML/PKDD 2013), 
 Prague, Czech Republic, September 23, 2013 (to appear).
 
-The perfomance of this algorithm, including its limitations, were studied at:
-
+The perfomance of this algorithm, including its limitations, was further studied at:
+B. L. Sturm, C. Kereliuk and A. Pikrakis, "A closer look at deep learning neural networks with low-level spectral 
+periodicity features," 2014 4th International Workshop on Cognitive Information Processing (CIP), Copenhagen, 2014, 
+pp. 1-6.
 
 
 The submission consists of MATLAB code. It does not assume that any specific 
