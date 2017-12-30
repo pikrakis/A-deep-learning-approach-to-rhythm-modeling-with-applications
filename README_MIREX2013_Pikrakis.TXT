@@ -1,0 +1,94 @@
+------------
+INTRODUCTION
+------------
+This is a MIREX-2013 submission for the Audio Classification (Test/Train) 
+task of "Audio Latin Music Genre Classification". The code implements the recent 
+algorithm of the submitter:
+
+Pikrakis, A., “A deep learning approach to rhythm modeling with applications”, 
+6th International Workshop on Machine Learning  and Music (ÌML 2013,), 
+held in conjunction with the European Conference on Machine Learning and 
+Principles and Practice of Knowledge Discovery in Databases (ECML/PKDD 2013), 
+Prague, Czech Republic, September 23, 2013 (to appear).
+
+
+The submitter is 
+Aggelos Pikrakis
+Department of Informatics
+University of Piraeus
+Greece
+email: pikrakis@unipi.gr, web: www.cs.unipi.gr/pikrakis
+
+The submission consists of MATLAB code. It does not assume that any specific 
+MATLAB libraries are present in the system where the code will run.
+
+--------------------------------------------
+INSTALLATION INSTRUCTIONS
+--------------------------------------------
+You only need to unzip the submitted file to a single folder.
+
+------------------
+HOW TO RUN
+------------------
+A) Feature extraction:
+Use the m-file extractFeatures.m
+Example:
+extractFeatures('.\tmp','C:\Users\aggelos\Documents\MATLAB\mirEX2013\tmp\featureExtractionListFile.txt');
+
+In the end of the feature extraction stage, the scratch folder will contain 
+one feature file per audio file. 
+* PathToScratchFolder (string) is the full path to the scratch folder. 
+* PathToFeatureExtractionListFile is the full path to the corresponding file.
+* IT IS IMPORTANT THAT THE FILENAMES OF THE AUDIO FILES ARE UNIQUE.
+
+B) Training:
+Use the m-file TrainingAlgorithm.m.
+Example:
+TrainingAlgorithm('.\tmp','.\tmp\TrainingListFile.txt');
+
+* PathToScratchFolder (string) is the full path to the corresponding folder. 
+* TrainingSetListFile (string) is the full path to the corresponding file. 
+* The TrainingAlgorithm.m file reads feature files from the scratch folder and 
+writes its output to the TrainingData.mat file in the scratch folder.
+
+C) Classification:
+Use the m-file ClassifyAlgorithm.m
+Example:
+ClassifyAlgorithm('.\tmp','.\tmp\TestListFile.txt','.\tmp\OutputFile.txt');
+
+* PathToScratchFolder (string) is the full path to the corresponding folder. 
+* TestingSet (string) is the full path to the corresponding file. 
+* The ClassifyAlgorithm.m file writes its output to the OutputListFile.
+* outputListFile (string) is the full path to the corresponding output file. 
+
+All files conform to the format of the guidelines that have been set by the task organizers.
+
+--------------------------------------
+DISKPACE REQUIREMENTS
+--------------------------------------
+The training algorithm stores in the scratch folder one feature file per audio recording. The size of each feature file is approximately 150 KB. Assuming 3500 recordings, the storage requirements are around 500 MB. The rest of the files that the training algorithm creates are negligible with respect to size.
+
+
+-------------------------------------
+RUNTIME REQUIREMENTS
+-------------------------------------
+The most computationally demanding stage is the feature extraction stage. Assuming 3500 recordings, 3 min each, it is expected that it will take around 8 hours for the feature extraction stage to complete.
+
+The training stage will consume around 5 hours of processing time on a standard laptop.
+
+The classification stage is trivial. It should take a few minutes to complete.
+
+-------------------
+MEMORY REQUIREMENTS
+-------------------
+Due to the use of a deep learning architecture, the algorithm is memory demanding. However, we do not expect any memory problems to emerge. If this is the case, a memory efficient but radically slower version can be made available on demand. 
+
+Aggelos Pikrakis, Eng., Ph.D.
+Lecturer
+Department of Informatics
+University of Piraeus
+email: pikrakis@unipi.gr
+Tel: +30 210 4142128
+FAX: +30 210 4142264
+Office: Main Building, 505
+
